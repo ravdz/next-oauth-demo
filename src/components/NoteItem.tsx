@@ -17,7 +17,7 @@ export function NoteItem({ note }: NoteItemProps) {
         dateTime={note.createdAt}
         className="mt-2 block text-xs text-zinc-500 dark:text-zinc-500"
       >
-        {new Date(note.createdAt).toLocaleDateString("pl-PL")}
+        {new Date(note.createdAt).toLocaleDateString("en-US")}
       </time>
     </li>
   );
