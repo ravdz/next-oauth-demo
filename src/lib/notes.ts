@@ -8,9 +8,8 @@ export type Note = {
 };
 
 export async function getNotes(): Promise<Note[]> {
-  const baseUrl = process.env.NEXTAUTH_URL ?? "http://localhost:3000";
   const cookieStore = await cookies();
-  const res = await fetch(`${baseUrl}/api/notes`, {
+  const res = await fetch(`${process.env.BASE_URL}/api/notes`, {
     headers: { Cookie: cookieStore.toString() },
   });
   if (!res.ok) return [];
